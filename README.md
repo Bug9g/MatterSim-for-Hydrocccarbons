@@ -8,10 +8,14 @@ The goal of this project is to adapt a state-of-the-art machine learning interat
 
 ### Key Results
 * **Test Set Error:** Achieved a Mean Absolute Error (MAE) of **`0.000874 eV/atom`** on the independent test dataset.
-* **Weighted Loss Function:** To mitigate spikes and stabilize predictions, a custom weighted Mean Squared Error (MSE) loss function was implemented, penalizing errors based on the molecular mass (\(M_i\)):
-  \[\mathcal{L}_{\text{weighted}} = \frac{1}{N} \sum_{i=1}^{N} w(M_i) \cdot \left( y_i - \hat{y}_i \right)^2\]
-  Where the weights \(w(M_i)\) are defined as:
-  \[w(M_i) = \begin{cases}    3.0, & \text{if } M_i < 50 \\    1.0, & \text{if } 50 \le M_i < 100 \\    1.5, & \text{if } 100 \le M_i \le 175 \\    3.0, & \text{if } M_i > 175    \end{cases}\]
+* **Weighted Loss Function:** To mitigate spikes and stabilize predictions, a custom weighted Mean Squared Error (MSE) loss function was implemented, penalizing errors based on the molecular mass ($M_i$):
+
+  $$ \mathcal{L}_{\text{weighted}} = \frac{1}{N} \sum_{i=1}^{N} w(M_i) \cdot \left( y_i - \hat{y}_i \right)^2 $$
+
+  Where the weights $w(M_i)$ are defined as:
+
+  $$ w(M_i) = \begin{cases} 3.0, & \text{if } M_i < 50 \\ 1.0, & \text{if } 50 \le M_i < 100 \\ 1.5, & \text{if } 100 \le M_i \le 175 \\ 3.0, & \text{if } M_i > 175 \end{cases} $$
+
 
 ---
 
