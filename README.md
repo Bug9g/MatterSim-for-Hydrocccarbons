@@ -33,6 +33,7 @@ $$
 * `Trained_MS/` — Directory containing project outputs:
   * Model checkpoints and best-performing weight files.
   * Training history plots (loss curves and validation dynamics).
+  * Parity plot on the test subset
 
 ---
 
